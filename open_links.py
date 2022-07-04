@@ -3,7 +3,6 @@
 # operate on text files for extracting
 #
 # This can work as a standalone program. It opens links in the browser.
-# For now, it works on Windows. 
 
 # import os
 import webbrowser
@@ -22,11 +21,6 @@ def get_links(file):
     return links
 
 
-# This function opens the default browser with the Link Specified.
-# def open_in_browser(link = "https://www.google.com"):
-    # os.startfile(link,'open')
-
-
 fi = None
 fhand = None
 try:
@@ -42,7 +36,6 @@ links = get_links(fhand)
 
 count = 0
 for link in links:
-    # open_in_browser(link)
     if count == 0:
         webbrowser.open(link, 1)
     else:

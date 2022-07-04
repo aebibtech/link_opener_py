@@ -1,5 +1,5 @@
 # Open Links from Plain Text Files
-Opens links from saved plain text files in the browser.
+Opens links from saved plain text files in the browser. Written in Python. Tested on Windows.
 
 ## How to use
 1. Go to the [Releases](https://github.com/aebibtech/link_opener_py/releases) section.

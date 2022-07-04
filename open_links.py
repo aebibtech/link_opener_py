@@ -1,7 +1,6 @@
 # Author: Paul Abib Camano
 # This module contains functions that
 # operate on text files for extracting
-# YouTube links.
 #
 # This can work as a standalone program. It opens links in the browser.
 # For now, it works on Windows. 
@@ -22,16 +21,9 @@ def get_links(file):
     return links
 
 
-# This function opens Google Chrome with the Link Specified.
-# win_type - "w" for New Window, "t" for New Tab
-def chrome(link = "https://www.google.com", win_type = "w"):
-    gc_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-    wtype = None
-    if win_type == 'w':
-        wtype = '--new-window'
-    elif win_type == 't':
-        wtype = '--new-tab'
-    os.system("\"{}\" {} {}".format(gc_path, wtype, link))
+# This function opens the default browser with the Link Specified.
+def open_in_browser(link = "https://www.google.com"):
+    os.startfile(link,'open')
 
 
 fi = None
@@ -44,13 +36,10 @@ except:
 
 
 if fhand == None:
-    exit()
+    sys.exit('No file selected.')
 links = get_links(fhand)
 
 count = 0
 for link in links:
-    if count == 0:
-        chrome(link)
-    else:
-        chrome(link,'t')
-    count += 1
+    open_in_browser(link)
+

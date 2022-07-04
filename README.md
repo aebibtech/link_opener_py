@@ -1,2 +1,2 @@
-# link_opener_py
-Opens links from saved plain text files.
+# Open Links from Plain Text Files
+Opens links from saved plain text files in the browser.

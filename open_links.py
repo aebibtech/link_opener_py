@@ -3,9 +3,9 @@
 # operate on text files for extracting
 #
 # This can work as a standalone program. It opens links in the browser.
-# For now, it works on Windows. 
 
-import os
+# import os
+import webbrowser
 import sys
 from tkinter import filedialog
 
@@ -19,11 +19,6 @@ def get_links(file):
             print('Link found: ', lnk)
             links.append(lnk)
     return links
-
-
-# This function opens the default browser with the Link Specified.
-def open_in_browser(link = "https://www.google.com"):
-    os.startfile(link,'open')
 
 
 fi = None
@@ -41,5 +36,9 @@ links = get_links(fhand)
 
 count = 0
 for link in links:
-    open_in_browser(link)
+    if count == 0:
+        webbrowser.open(link, 1)
+    else:
+        webbrowser.open(link, 2)
+
 
